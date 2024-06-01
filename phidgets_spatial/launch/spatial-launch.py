@@ -24,10 +24,12 @@ def generate_launch_description():
 
     params = {
         # optional param use_orientation, default is false
-        'use_orientation': False,
+        'use_orientation': True,
 
         # optional param spatial_algorithm, default is 'ahrs'
         'spatial_algorithm': 'ahrs',
+
+        'publish_rate': '500.0',
 
         # optional ahrs parameters
         'ahrs_angular_velocity_threshold': 1.0,
