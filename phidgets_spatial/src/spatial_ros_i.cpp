@@ -309,7 +309,7 @@ SpatialRosI::SpatialRosI(const rclcpp::NodeOptions &options)
         throw;
     }
 
-    imu_pub_ = this->create_publisher<sensor_msgs::msg::Imu>("imu/data_raw", 1);
+    imu_pub_ = this->create_publisher<sensor_msgs::msg::Imu>("imu/data", 1);
 
     cal_srv_ = this->create_service<std_srvs::srv::Empty>(
         "imu/calibrate",
@@ -417,6 +417,10 @@ void SpatialRosI::publishLatest()
     msg->orientation.x = last_quat_x_;
     msg->orientation.y = last_quat_y_;
     msg->orientation.z = last_quat_z_;
+
+    msg->orientation_covariance[0] = 0.001;
+    msg->orientation_covariance[4] = 0.001;
+    msg->orientation_covariance[8] = 0.001;
 
     imu_pub_->publish(std::move(msg));
 
