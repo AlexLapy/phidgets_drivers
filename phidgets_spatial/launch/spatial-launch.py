@@ -27,14 +27,14 @@ def generate_launch_description():
         'use_orientation': True,
 
         # optional param spatial_algorithm, default is 'ahrs'
-        'spatial_algorithm': 'ahrs',
+        'spatial_algorithm': 'imu',
 
-        'publish_rate': 500.0,
+        'publish_rate': 250.0,
 
         # optional ahrs parameters
         'ahrs_angular_velocity_threshold': 1.0,
         'ahrs_angular_velocity_delta_threshold': 0.1,
-        'ahrs_acceleration_threshold': 0.1,
+        'ahrs_acceleration_threshold': 0.05,
         'ahrs_mag_time': 10.0,
         'ahrs_accel_time': 10.0,
         'ahrs_bias_time': 1.25,
