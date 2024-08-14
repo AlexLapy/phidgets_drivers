@@ -29,7 +29,7 @@ def generate_launch_description():
         # optional param spatial_algorithm, default is 'ahrs'
         'spatial_algorithm': 'imu',
 
-        'publish_rate': 250.0,
+        'publish_rate': 200.0,
 
         # optional ahrs parameters
         'ahrs_angular_velocity_threshold': 1.0,
